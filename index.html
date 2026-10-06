@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#121a1a">
+    <title>ARPG — движение и атака</title>
+    <link rel="icon" href="/assets/hero.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main>
+      <canvas id="world" aria-label="Игровое поле. Клик ЛКМ — идти в точку; удержание ЛКМ — следовать за курсором; клик по мишени — атаковать."></canvas>
+      <header class="hud">
+        <div class="title"><span class="eyebrow">ARPG / ЛАБОРАТОРИЯ</span><h1>Движение и атака<span class="step">02</span></h1></div>
+        <div class="readout"><span class="indicator"></span><span id="mode">Покой</span><output id="coordinates">0 · 0</output></div>
+      </header>
+      <footer class="controls">
+        <span><kbd>ЛКМ</kbd> идти или атаковать</span><span class="divider"></span><span><kbd>Удержание</kbd> движение или серия ударов</span>
+      </footer>
+      <span class="scale">Сетка · 64 ед.</span>
+      <span id="fps" class="fps" aria-label="Кадры в секунду">FPS —</span>
+      <button id="reset" type="button" title="Вернуться в начало мира">В начало <span aria-hidden="true">↺</span></button>
+      <button id="settings-toggle" class="settings-toggle" type="button" aria-expanded="false" aria-controls="settings-panel">Параметры</button>
+      <aside id="settings-panel" class="settings-panel" aria-label="Параметры игры" hidden>
+        <div class="settings-heading"><div><span class="eyebrow">НАСТРОЙКА</span><h2>Параметры</h2></div><button id="panel-close" class="panel-close" type="button" aria-label="Свернуть параметры">×</button></div>
+        <div id="parameter-fields"></div>
+        <div class="settings-footer"><span id="settings-status" role="status" aria-live="polite"></span><button id="settings-defaults" type="button">По умолчанию</button></div>
+      </aside>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
